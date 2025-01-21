@@ -1,31 +1,28 @@
-import { useState } from 'react';
-import Header from './components/header';
-import Footer from './components/footer';
+import React, { useState } from 'react';
+import Header from './components/header.jsx';
+import Footer from './components/footer.jsx';
+import Counter from './components/counter.jsx';
+import DataTable from './components/dataTable.jsx';
+import Form from './components/form.jsx';
 
-function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+    const peopleData = [
+        { name: "Zahin", age: 22, email: "zahin@example.com" },
+        { name: "Ahsan", age: 25, email: "ahsan@example.com" },
+        { name: "Rifat", age: 23, email: "rifat@example.com" },
+    ];
 
-  return (
-    <>
-      <Header />
-      <main className="p-8 text-center content-center">
-        <h1 style={{ 
-          color: "blue",
-         }}>Hello React</h1>
-        <button onClick={() => setCount(count + 1)}
-          className="bg-blue-500 text-white py-2 px-4 rounded mt-4"
-        >
-          Click me
-        </button>
-        {count === 0 ? (
-            <p className="mt-2">None</p>
-        ) : (
-            <p className="mt-2">You clicked {count} times</p>
-        )}
-      </main>
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <Header title="My Application" />
+            <main className="main-container">
+                <Counter />
+                <Form />
+                <DataTable data={peopleData} />
+            </main>
+            <Footer />
+        </>
+    );
 }
 
 export default App;
