@@ -4,6 +4,7 @@ import Footer from './components/footer.jsx';
 import Counter from './components/counter.jsx';
 import DataTable from './components/dataTable.jsx';
 import Form from './components/form.jsx';
+import Hook from './components/hook.jsx';
 
 const App = () => {
     const peopleData = [
@@ -18,6 +19,7 @@ const App = () => {
             <main className="main-container">
                 <Counter />
                 <Form />
+                <Hook />
                 <DataTable data={peopleData} />
             </main>
             <Footer />
